@@ -16,6 +16,8 @@ import { ItemComponent } from './cv/item/item.component';
 import { CardComponent } from './cv/card/card.component';
 import { ListComponent } from './cv/list/list.component';
 import { NgstyleComponent } from './directives/ngstyle/ngstyle.component';
+import { MiniWordComponent } from './directives/mini-word/mini-word.component';
+import { LampeComponent } from './directives/lampe/lampe.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { NgstyleComponent } from './directives/ngstyle/ngstyle.component';
     ItemComponent,
     CardComponent,
     ListComponent,
-    NgstyleComponent
+    NgstyleComponent,
+    MiniWordComponent,
+    LampeComponent
   ],
   imports: [
     BrowserModule,
