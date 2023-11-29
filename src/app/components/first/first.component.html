@@ -1,0 +1,9 @@
+<div class="alert alert-primary">
+  <!-- Au click sur ce paragraphe appelle la méthode showHide -->
+  <p (click)="showHide()">First</p>
+  <input #monInput type="text"/>
+  le contenu de l'input est :
+  <!-- Interpolation  -->
+  <p [hidden]="isHidden">{{name}} works!</p>
+  <app-second/>
+</div>
