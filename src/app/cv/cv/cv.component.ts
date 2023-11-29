@@ -7,6 +7,7 @@ import { Cv } from '../model/cv.model';
   styleUrls: ['./cv.component.css'],
 })
 export class CvComponent {
+  selectedCv!: Cv;
   cvs: Cv[] = [
     new Cv(
       1,
@@ -15,7 +16,7 @@ export class CvComponent {
       41,
       'teacher',
       'rotating_card_profile2.png',
-      "1111"
+      '1111'
     ),
     new Cv(
       2,
@@ -24,7 +25,11 @@ export class CvComponent {
       5,
       'enfant',
       'rotating_card_profile3.png',
-      "4444"
+      '4444'
     ),
   ];
+
+  getSelectedCv(cv: Cv) {
+    this.selectedCv = cv;
+  }
 }
