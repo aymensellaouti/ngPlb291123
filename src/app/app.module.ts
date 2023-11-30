@@ -34,6 +34,8 @@ import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NF404Component } from './components/nf404/nf404.component';
 import { DetailCvComponent } from './cv/detail-cv/detail-cv.component';
+import { TestFormComponent } from './components/test-form/test-form.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ import { DetailCvComponent } from './cv/detail-cv/detail-cv.component';
     NavbarComponent,
     NF404Component,
     DetailCvComponent,
+    TestFormComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
