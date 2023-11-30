@@ -7,6 +7,5 @@ import { Cv } from '../model/cv.model';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent {
-  @Input() cv: Cv | null = null;
-
+  @Input({required: true}) cv: Cv | null = null;
 }
