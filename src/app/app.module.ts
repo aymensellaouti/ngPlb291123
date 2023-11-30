@@ -25,6 +25,7 @@ import { TestPipeComponent } from './components/test-pipe/test-pipe.component';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 import { LoggerService } from './services/logger.service';
 import { SayHelloService } from './services/sayHello.service';
+import { TodoComponent } from './todo/component/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { SayHelloService } from './services/sayHello.service';
     BtcToUsdPipe,
     TestPipeComponent,
     DefaultImagePipe,
+    TodoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
