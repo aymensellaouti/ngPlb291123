@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Cv } from '../model/cv.model';
 import { LoggerService } from 'src/app/services/logger.service';
 import { SayHelloService } from 'src/app/services/sayHello.service';
+import { TodoService } from 'src/app/todo/services/todo.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cv',
@@ -21,13 +23,16 @@ export class CvComponent {
   // La dépendance LoggerService
   constructor(
     private loggerService: LoggerService,
-    private sayHelloService: SayHelloService
+    private sayHelloService: SayHelloService,
+    private todoService: TodoService,
+    private toastr: ToastrService
   ) {
     this.sayHelloService.hello();
+    this.toastr.info('Bienvenu dans notre CvTech');
     this.loggerService.logger('cc je suis le cvComponent');
-
   }
   getSelectedCv(cv: Cv) {
     this.selectedCv = cv;
+    this.todoService.logTodos();
   }
 }
