@@ -1,0 +1,7 @@
+<p>test-pipe works!</p>
+<input type="text" (keyup)="test()">
+<ol>
+  <li *ngFor="let element of accounts">
+    {{ element | btcToUsd }}
+    </li>
+</ol>

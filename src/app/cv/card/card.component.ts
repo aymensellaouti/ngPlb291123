@@ -8,4 +8,5 @@ import { Cv } from '../model/cv.model';
 })
 export class CardComponent {
   @Input({required: true}) cv: Cv | null = null;
+
 }
