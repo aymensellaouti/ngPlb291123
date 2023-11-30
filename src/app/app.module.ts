@@ -23,6 +23,8 @@ import { RainbowDirective } from './directives/rainbow.directive';
 import { BtcToUsdPipe } from './pipes/btc-to-usd.pipe';
 import { TestPipeComponent } from './components/test-pipe/test-pipe.component';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
+import { LoggerService } from './services/logger.service';
+import { SayHelloService } from './services/sayHello.service';
 
 @NgModule({
   declarations: [
@@ -45,14 +47,10 @@ import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
     RainbowDirective,
     BtcToUsdPipe,
     TestPipeComponent,
-    DefaultImagePipe
+    DefaultImagePipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
