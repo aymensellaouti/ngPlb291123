@@ -4,6 +4,7 @@ import { LoggerService } from 'src/app/services/logger.service';
 import { SayHelloService } from 'src/app/services/sayHello.service';
 import { TodoService } from 'src/app/todo/services/todo.service';
 import { ToastrService } from 'ngx-toastr';
+import { CvService } from '../services/cv.service';
 
 @Component({
   selector: 'app-cv',
@@ -15,18 +16,17 @@ export class CvComponent {
   //  L'instantiation direct va provoquer un couplage Fort
   //  sayHelloService = new SayHelloService();
   date = new Date();
-  cvs: Cv[] = [
-    new Cv(1, 'sellaouti', 'aymen', 41, 'teacher', '', '1111'),
-    new Cv(2, 'sellaouti', 'skander', 5, 'enfant', '      ', '4444'),
-  ];
+  cvs: Cv[] = [];
   // J'ai demandé à mon injecteur de me fournir
   // La dépendance LoggerService
   constructor(
     private loggerService: LoggerService,
     private sayHelloService: SayHelloService,
     private todoService: TodoService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private cvService: CvService,
   ) {
+    this.cvs = this.cvService.getCvs();
     this.sayHelloService.hello();
     this.toastr.info('Bienvenu dans notre CvTech');
     this.loggerService.logger('cc je suis le cvComponent');

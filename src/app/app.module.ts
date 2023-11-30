@@ -30,6 +30,7 @@ import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 import { LoggerService } from './services/logger.service';
 import { SayHelloService } from './services/sayHello.service';
 import { TodoComponent } from './todo/component/todo/todo.component';
+import { EmbaucheComponent } from './cv/embauche/embauche.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { TodoComponent } from './todo/component/todo/todo.component';
     TestPipeComponent,
     DefaultImagePipe,
     TodoComponent,
+    EmbaucheComponent,
   ],
   imports: [
     BrowserModule,
