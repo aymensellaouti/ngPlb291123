@@ -22,6 +22,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowDirective } from './directives/rainbow.directive';
 import { BtcToUsdPipe } from './pipes/btc-to-usd.pipe';
 import { TestPipeComponent } from './components/test-pipe/test-pipe.component';
+import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { TestPipeComponent } from './components/test-pipe/test-pipe.component';
     HighlightDirective,
     RainbowDirective,
     BtcToUsdPipe,
-    TestPipeComponent
+    TestPipeComponent,
+    DefaultImagePipe
   ],
   imports: [
     BrowserModule,
