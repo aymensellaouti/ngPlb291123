@@ -31,6 +31,7 @@ import { LoggerService } from './services/logger.service';
 import { SayHelloService } from './services/sayHello.service';
 import { TodoComponent } from './todo/component/todo/todo.component';
 import { EmbaucheComponent } from './cv/embauche/embauche.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { EmbaucheComponent } from './cv/embauche/embauche.component';
     DefaultImagePipe,
     TodoComponent,
     EmbaucheComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
