@@ -32,6 +32,8 @@ import { SayHelloService } from './services/sayHello.service';
 import { TodoComponent } from './todo/component/todo/todo.component';
 import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { NF404Component } from './components/nf404/nf404.component';
+import { DetailCvComponent } from './cv/detail-cv/detail-cv.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     TodoComponent,
     EmbaucheComponent,
     NavbarComponent,
+    NF404Component,
+    DetailCvComponent,
   ],
   imports: [
     BrowserModule,

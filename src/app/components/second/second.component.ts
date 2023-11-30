@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-second',
@@ -11,5 +12,8 @@ import { Component } from '@angular/core';
   ]
 })
 export class SecondComponent {
+  constructor(private acr: ActivatedRoute) {
+    console.log(this.acr);
 
+  }
 }
