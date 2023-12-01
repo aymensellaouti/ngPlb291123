@@ -5,6 +5,8 @@ import { SayHelloService } from 'src/app/services/sayHello.service';
 import { TodoService } from 'src/app/todo/services/todo.service';
 import { ToastrService } from 'ngx-toastr';
 import { CvService } from '../services/cv.service';
+import { distinctUntilChanged } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-cv',
@@ -13,6 +15,7 @@ import { CvService } from '../services/cv.service';
 })
 export class CvComponent {
   selectedCv!: Cv;
+  nbClick = 0;
   //  L'instantiation direct va provoquer un couplage Fort
   //  sayHelloService = new SayHelloService();
   date = new Date();
@@ -24,10 +27,20 @@ export class CvComponent {
     private sayHelloService: SayHelloService,
     private todoService: TodoService,
     private toastr: ToastrService,
-    private cvService: CvService,
+    private cvService: CvService
   ) {
     this.cvs = this.cvService.getCvs();
     this.sayHelloService.hello();
+    // Chaque fois que quelqu'un click sur un console.clear()
+    // On incrémente le nbre de click
+    this.cvService.selectCv$
+    .pipe(
+      distinctUntilChanged(),
+      takeUntilDestroyed()
+    )
+    .subscribe(
+      () => this.nbClick++
+    )
     this.toastr.info('Bienvenu dans notre CvTech');
     this.loggerService.logger('cc je suis le cvComponent');
   }
