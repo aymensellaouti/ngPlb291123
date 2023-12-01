@@ -5,7 +5,7 @@ import { SayHelloService } from 'src/app/services/sayHello.service';
 import { TodoService } from 'src/app/todo/services/todo.service';
 import { ToastrService } from 'ngx-toastr';
 import { CvService } from '../services/cv.service';
-import { distinctUntilChanged } from 'rxjs';
+import { Observable, catchError, distinctUntilChanged, of } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
@@ -19,7 +19,7 @@ export class CvComponent {
   //  L'instantiation direct va provoquer un couplage Fort
   //  sayHelloService = new SayHelloService();
   date = new Date();
-  cvs: Cv[] = [];
+  cvs$: Observable<Cv[]>;
   // J'ai demandé à mon injecteur de me fournir
   // La dépendance LoggerService
   constructor(
@@ -29,7 +29,16 @@ export class CvComponent {
     private toastr: ToastrService,
     private cvService: CvService
   ) {
-    this.cvs = this.cvService.getCvs();
+    this.cvs$ = this.cvService.getCvs().pipe(
+      catchError(
+        (e) => {
+        console.log({e});
+
+         this.toastr.error(`Problème avec le serveur les données sont fake`);
+         return of(this.cvService.getFakeCvs());
+        }
+      )
+    );
     this.sayHelloService.hello();
     // Chaque fois que quelqu'un click sur un console.clear()
     // On incrémente le nbre de click

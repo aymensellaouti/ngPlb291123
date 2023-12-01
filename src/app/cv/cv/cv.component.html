@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="cvs$ | async as cvs">
   <div class="col">
     <div class="alert alert-warning">
       {{date | date: 'full' }}
