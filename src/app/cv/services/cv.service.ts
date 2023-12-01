@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Cv } from '../model/cv.model';
 import { Observable, Subject, retry } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { API } from 'src/app/config/api.config';
 
 @Injectable({
@@ -57,7 +57,9 @@ export class CvService {
    * @returns
    */
   deleteCvById(id: number): Observable<Cv>{
+    const params = new HttpParams().set('access_token','LeToken')
     return this.http.delete<Cv>(API.cv + id);
+
   }
 
   /**

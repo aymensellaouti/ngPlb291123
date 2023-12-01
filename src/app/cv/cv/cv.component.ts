@@ -33,7 +33,6 @@ export class CvComponent {
       catchError(
         (e) => {
         console.log({e});
-
          this.toastr.error(`Problème avec le serveur les données sont fake`);
          return of(this.cvService.getFakeCvs());
         }
@@ -58,3 +57,8 @@ export class CvComponent {
     this.todoService.logTodos();
   }
 }
+
+
+//   result$ = this.activatedRoute.params.pipe(
+//     switchMap(champsTable => this.getMesInfosByColones(champsTable))
+//   });
