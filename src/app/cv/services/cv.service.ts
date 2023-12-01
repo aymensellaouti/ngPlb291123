@@ -19,9 +19,7 @@ export class CvService {
     ];
   }
   getCvs(): Observable<Cv[]> {
-    return this.http.get<Cv[]>(API.cv).pipe(
-      retry({count: 4, delay: 1000})
-    );
+    return this.http.get<Cv[]>(API.cv).pipe(retry({ count: 4, delay: 1000 }));
   }
 
   getFakeCvs(): Cv[] {
@@ -47,7 +45,7 @@ export class CvService {
    * @param id Récupére le cv par son id via l'API
    * @returns
    */
-  getCvById(id: number): Observable<Cv>{
+  getCvById(id: number): Observable<Cv> {
     return this.http.get<Cv>(API.cv + id);
   }
 
@@ -56,10 +54,17 @@ export class CvService {
    * @param id supprime le cv par son id via l'API
    * @returns
    */
-  deleteCvById(id: number): Observable<Cv>{
-    const params = new HttpParams().set('access_token','LeToken')
+  deleteCvById(id: number): Observable<Cv> {
     return this.http.delete<Cv>(API.cv + id);
+  }
 
+  /**
+   *
+   * @param id supprime le cv par son id via l'API
+   * @returns
+   */
+  addCv(cv: Cv): Observable<Cv> {
+    return this.http.post<Cv>(API.cv, Cv);
   }
 
   /**

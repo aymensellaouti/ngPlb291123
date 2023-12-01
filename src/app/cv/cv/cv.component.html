@@ -1,7 +1,7 @@
 <div class="row" *ngIf="cvs$ | async as cvs">
-  <button *ngFor="let cv of cvs" class="btn btn-danger">
+  <!-- <button *ngFor="let cv of cvs" class="btn btn-danger">
     {{cv.name}}
-  </button>
+  </button> -->
   <div class="col">
     <div class="alert alert-warning">
       {{date | date: 'full' }}

@@ -9,11 +9,14 @@ import { SecondComponent } from './components/second/second.component';
 import { NF404Component } from './components/nf404/nf404.component';
 import { DetailCvComponent } from './cv/detail-cv/detail-cv.component';
 import { LoginComponent } from './auth/login/login.component';
+import { AddCvComponent } from './cv/add-cv/add-cv.component';
+import { authGuard } from './auth/guards/auth.guard';
 
 // todo
 const routes: Routes = [
   {path: '', component: FirstComponent},
   {path: 'cv', component: CvComponent},
+  {path: 'cv/add', component: AddCvComponent, canActivate: [authGuard]},
   {path: 'cv/:id', component: DetailCvComponent},
   {path: 'todo', component: TodoComponent},
   {path: 'word', component: MiniWordComponent},
